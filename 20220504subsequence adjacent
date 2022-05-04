@@ -1,0 +1,21 @@
+function isValidSubsequence(array, sequence) {
+  // Write your code here.
+	const result = [];
+	for (let i = 0; i<array.length-sequence.length; i++) {
+		if (array[i] === sequence[0]) {
+			result.push(sequence[0]);
+			for (let j = 1; j<sequence.length-1; j++) {
+				if (array[i+j] === sequence[j]) {
+					result.push(sequence[j]);
+				}
+			}
+		}
+	} if (sequence.length === result.length) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
